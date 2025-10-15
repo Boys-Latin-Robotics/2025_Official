@@ -1,10 +1,9 @@
 package frc.robot.subsystems;
 
-import java.util.Random;
-
 import edu.wpi.first.wpilibj.SerialPort;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import java.util.Random;
 
 public class LedStrand extends SubsystemBase {
     private SerialPort arduinoSerial;
@@ -32,18 +31,17 @@ public class LedStrand extends SubsystemBase {
     }
 
     public void changeLed(int r, int g, int b) {
-        System.out.println("Here");
-        sendSerialCommand("R"+r+"G"+g+"B"+b);
+        sendSerialCommand("R" + r + "G" + g + "B" + b);
     }
 
     public Command changeLedCommand() {
-        return this.runOnce(() -> changeLed(rand.nextInt(255),rand.nextInt(255),rand.nextInt(255)));
+        return this.runOnce(() -> changeLed(rand.nextInt(255), rand.nextInt(255), rand.nextInt(255)));
     }
 
     private void sendSerialCommand(String command) {
         long currentTime = System.currentTimeMillis();
 
-        if (currentTime - lastUpdateTime >= 10) {  // Only update every second
+        if (currentTime - lastUpdateTime >= 10) { // Only update every second
             lastUpdateTime = currentTime;
 
             if (arduinoSerial != null) {

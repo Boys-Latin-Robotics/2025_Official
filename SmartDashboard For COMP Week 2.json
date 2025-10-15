@@ -46,8 +46,8 @@
             ],
             "content": {
               "_type": "Camera Stream",
-              "_source0": "camera_server://limelight-frl",
-              "_title": "limelight-frl",
+              "_source0": "camera_server://limelight-front-left",
+              "_title": "limelight-front-left",
               "_glyph": 148,
               "_showGlyph": false,
               "Crosshair/Show crosshair": true,
@@ -67,8 +67,8 @@
             ],
             "content": {
               "_type": "Network Table Tree",
-              "_source0": "network_table:///CameraPublisher/limelight-frl",
-              "_title": "/CameraPublisher/limelight-frl",
+              "_source0": "network_table:///CameraPublisher/limelight-front-left",
+              "_title": "/CameraPublisher/limelight-front-left",
               "_glyph": 148,
               "_showGlyph": false
             }
@@ -80,8 +80,8 @@
             ],
             "content": {
               "_type": "Network Table Tree",
-              "_source0": "network_table:///CameraPublisher/limelight-frr",
-              "_title": "/CameraPublisher/limelight-frr",
+              "_source0": "network_table:///CameraPublisher/limelight-front-right",
+              "_title": "/CameraPublisher/limelight-front-right",
               "_glyph": 148,
               "_showGlyph": false
             }

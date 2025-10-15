@@ -1,9 +1,9 @@
 package frc.robot.support.limelight;
 
+import static java.lang.String.format;
+
 import edu.wpi.first.net.PortForwarder;
 import frc.robot.support.Telemetry;
-
-import static java.lang.String.format;
 
 /**
  * A collection of Limelight related utilities
@@ -12,7 +12,6 @@ public class LimelightUtil {
     private static final String DEFAULT_HOSTNAME = "limelight.local";
     public static final int LOW_PORT = 5800;
     public static final int HIGH_PORT = 5809;
-
 
     public static void startPortForwarding() {
         startPortForwarding(DEFAULT_HOSTNAME);

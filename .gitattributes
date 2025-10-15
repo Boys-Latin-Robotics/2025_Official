@@ -1,0 +1,123 @@
+# =============================================================================
+# FRC Team 2534 - Git Line Ending Configuration
+# =============================================================================
+# This file ensures consistent line endings across Windows, Mac, and Linux
+# development environments.
+#
+# Line ending conventions:
+# - Repository (server): Always LF (\n)
+# - Windows checkout: CRLF (\r\n) for most files, LF for scripts
+# - Mac/Linux checkout: LF (\n) for everything
+# =============================================================================
+
+# Default: Auto-detect text files and normalize to LF in repo
+* text=auto
+
+# =============================================================================
+# Source Code Files - Always normalize to LF
+# =============================================================================
+*.java text
+*.kt text
+*.kts text
+
+# =============================================================================
+# Build & Configuration Files
+# =============================================================================
+*.gradle text
+*.gradle.kts text
+*.properties text
+*.json text
+*.xml text
+*.yaml text
+*.yml text
+*.toml text
+
+# =============================================================================
+# Documentation
+# =============================================================================
+*.md text
+*.txt text
+*.adoc text
+
+# =============================================================================
+# Scripts - Force LF (even on Windows)
+# =============================================================================
+# These must have LF endings to work on Linux (including roboRIO)
+*.sh text eol=lf
+gradlew text eol=lf
+
+# =============================================================================
+# Windows-Specific Files - Force CRLF
+# =============================================================================
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+
+# =============================================================================
+# Web Files (if you have dashboard HTML)
+# =============================================================================
+*.html text
+*.css text
+*.js text
+*.jsx text
+*.ts text
+*.tsx text
+
+# =============================================================================
+# Binary Files - Never touch
+# =============================================================================
+*.jar binary
+*.class binary
+*.zip binary
+*.gz binary
+*.tar binary
+*.7z binary
+
+# Images
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.svg binary
+*.webp binary
+
+# Documents
+*.pdf binary
+*.doc binary
+*.docx binary
+*.xls binary
+*.xlsx binary
+
+# Fonts
+*.ttf binary
+*.otf binary
+*.woff binary
+*.woff2 binary
+
+# Video
+*.mp4 binary
+*.mov binary
+*.avi binary
+
+# Audio
+*.mp3 binary
+*.wav binary
+
+# =============================================================================
+# WPILib & FRC-Specific Files
+# =============================================================================
+# PathPlanner JSON files
+*.path text
+*.auto text
+
+# Glass/AdvantageScope logs
+*.wpilog binary
+*.hoot binary
+*.rlog binary
+
+# RoboRIO deploy directory
+deploy/** text
+
+# Vendor dependencies
+vendordeps/*.json text

@@ -12,9 +12,26 @@ jobs:
     container: wpilib/roborio-cross-ubuntu:2025-22.04
     steps:
     - uses: actions/checkout@v4
+
     - name: Add repository to git safe directories
       run: git config --global --add safe.directory $GITHUB_WORKSPACE
+
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
+
     - name: Compile and run tests on robot code
-      run: ./gradlew build
+      run: ./gradlew --no-daemon clean check jacocoTestReport jacocoTestCoverageVerification
+
+    - name: Upload JaCoCo HTML report
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: jacoco-html
+        path: build/reports/jacoco/test/html
+
+    - name: Upload JaCoCo XML (for tooling)
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: jacoco-xml
+        path: build/reports/jacoco/test/jacocoTestReport.xml

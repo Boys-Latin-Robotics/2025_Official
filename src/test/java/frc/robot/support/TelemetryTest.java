@@ -1,18 +1,18 @@
 package frc.robot.support;
 
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
+
 import edu.wpi.first.util.datalog.DataLog;
 import edu.wpi.first.wpilibj.DataLogManager;
 import org.junit.jupiter.api.Test;
 import org.mockito.MockedStatic;
 import org.mockito.Mockito;
 
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
-
 public class TelemetryTest {
 
     @Test
-    public void testTelemetryInfo(){
+    public void testTelemetryInfo() {
         try (MockedStatic<DataLogManager> util = Mockito.mockStatic(DataLogManager.class)) {
             Telemetry.info("Test");
             util.verify(() -> DataLogManager.log("Test"));
